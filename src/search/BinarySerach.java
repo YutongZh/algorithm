@@ -46,15 +46,17 @@ class BinarySearch {
 
             //中间比左边大，左边有序 注意是小于等于，不然如果值是{2,1}会出问题。
             if(nums[start] <= nums[mid]) {
-                //为什么选择nums[start] <=nums[mid]而不是nums[start]<nums[mid]，请问您是怎么考虑的
+                //为什么选择nums[start] <=nums[mid]而不是nums[start]<nums[mid]
                 //我觉得主要是因为除法是向下取整的，所以此处需要考虑在特殊情况下等号的位置
+                //[start, mid)
                 if(nums[mid] > target && nums[start] <= target) {
                     end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
             } else {
-                if(nums[mid] <= target && nums[end] > target) {
+                //注意这里的等号   （mid， end]
+                if(nums[mid] < target && nums[end] >= target) {
                     start = mid + 1;
                 } else {
                     end = mid - 1;
