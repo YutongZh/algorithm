@@ -14,7 +14,7 @@ package leetcode;
  * 原因：342 + 465 = 807
  *
  */
-public class AddTwoNumbers_2 {
+public class Leetcode_2 {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //定义哑结点
         ListNode pre = new ListNode(0);
